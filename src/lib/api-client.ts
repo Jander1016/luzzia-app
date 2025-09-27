@@ -1,8 +1,16 @@
 import axios from 'axios';
 import { envConfig } from '../config/env';
 
+const getApiBaseUrl = () => {
+  if(envConfig.isDevelopment && envConfig.apiUrl.endsWith('/')) {
+    return '/api';
+  }
+  return envConfig.apiUrl;
+}
+
+
 export const apiClient = axios.create({
-  baseURL: envConfig.apiUrl,
+  baseURL: getApiBaseUrl(),
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',

@@ -19,7 +19,19 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       port: 5173,
-      host: true,
+      host: true, 
+      proxy: {
+      '/api': {
+        target: 'https://luzzia-backend-production.up.railway.app',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '/api/v1'),
+        secure: false,
+      }
+    }
     },
+    build: {
+      outDir: 'dist',
+      sourcemap: false,
+    }
   }
 })
