@@ -14,7 +14,7 @@ requiredEnvVars.forEach((varName) => {
 });
 
 export const envConfig: EnvConfig = {
-  apiUrl: import.meta.env.VITE_API_URL || 'https://luzzia-backend-production.up.railway.app/api/v1',
+  apiUrl: import.meta.env.VITE_API_URL,
   appTitle: import.meta.env.VITE_APP_TITLE || 'Luzzia ⚡',
   appDescription: import.meta.env.VITE_APP_DESCRIPTION || 'Precios de la luz en tiempo real',
   isDevelopment: import.meta.env.DEV || false,

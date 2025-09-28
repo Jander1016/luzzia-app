@@ -5,8 +5,7 @@ import type { ContactFormData } from '../types/prices';
 export function ContactForm() {
   const [formData, setFormData] = useState<ContactFormData>({
     email: '',
-    name: '',
-    source: 'landing-page'
+    name: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
@@ -19,7 +18,7 @@ export function ContactForm() {
     try {
       await apiClient.post('/contacts', formData);
       setMessage('success::¡Gracias! Te contactaremos pronto.');
-      setFormData({ email: '', name: '', source: 'landing-page' });
+      setFormData({ email: '', name: '' });
     } catch (error: any) {
       const errorMsg = error.response?.data?.message || 'Error al enviar. Intenta nuevamente.';
       setMessage(`error::${errorMsg}`);

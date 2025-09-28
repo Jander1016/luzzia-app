@@ -1,4 +1,4 @@
-import { usePriceStats } from '../../hooks/use-prices'
+import { usePriceStats } from '../hooks/use-prices'
 
 export function PriceStats() {
   const { data: stats, isLoading } = usePriceStats();

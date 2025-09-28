@@ -1,5 +1,5 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-import { useTodayPrices } from '../../hooks/use-prices';
+import { useTodayPrices } from '../hooks/use-prices';
 
 export function PriceChart() {
   const { data: prices, isLoading, error } = useTodayPrices();

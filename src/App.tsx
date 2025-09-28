@@ -1,10 +1,9 @@
-// src/App.tsx
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { PriceChart } from './components/ui/price-chart';
-import { PriceStats } from './components/ui/price-stats';
-// import { ContactForm } from './components/contact-form';
+import { PriceChart } from './components/price-chart';
+import { PriceStats } from './components/price-stats';
 import { useAppConfig } from './hooks/use-config';
 import { ContactForm } from './components/contact-form';
+import { CurrentPrice } from './components/currentPrice/current-price';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -39,6 +38,7 @@ function AppContent() {
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8">
+        <CurrentPrice />
         <PriceStats />
         
         <div className="grid lg:grid-cols-3 gap-8 mb-8">
@@ -66,7 +66,6 @@ export default function App() {
   );
 }
 
-// Componentes auxiliares para mejor organización
 function InfoSection() {
   return (
     <div className="grid md:grid-cols-3 gap-6">
