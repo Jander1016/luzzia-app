@@ -6,8 +6,8 @@ import { es } from 'date-fns/locale'
 import { format } from "date-fns"
 
 import { useTodayPrices } from "@/hooks/use-prices"
-import { CurrentPriceSkeleton } from "./currentPriceSkeleton"
-import { CurrentPriceError } from "./currentPriceError"
+import { CurrentPriceSkeleton } from "./CurrentPriceSkeleton"
+import { CurrentPriceError } from "./CurrentPriceError"
 import type { PriceTrend } from "@/types/prices"
 import { getPriceTrend } from "@/domain/prices/price-trend"
 import { getPriceLevelInfo } from "@/domain/prices/price-levels"
